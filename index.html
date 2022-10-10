@@ -12,21 +12,30 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-
+		
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="#one" class="image avatar"><img src="images/avatar.jpg" alt="About me" /></a>
+					<a href="#about_me" class="image avatar"><img src="images/avatar.jpg" alt="About me" /></a>
 					<h1><strong>Vasile-Alexandru Ciulea</strong></h1>
-					<p>Mathematics and Computer Science student <br/> at London Metropolitan University <br/> (2020 - Present)</p>
+					<p>Mathematics and Computer Science student</p>
+					<div class="col-6 col-12-small">
+						<ul class="actions stacked">
+							<li><a href="#about_me" class="button primary fit small">About me</a></li>
+							<li><a href="#education" class="button primary fit small">Education</a></li>
+							<li><a href="#projects" class="button primary fit small">Projects</a></li>
+							<li><a href="#technical_knowledge" class="button primary fit small">Technical knowledge</a></li>
+							
+						</ul>
+					</div>
+					
+						
 				</div>
 			</header>
 
 		<!-- Main -->
 			<div id="main">
-
-				<!-- One -->
-					<section id="one">
+					<section id="about_me">
 						<header class="major">
 							<h2>About me</h2>
 						</header>
@@ -46,20 +55,60 @@
 							great decision because I have a concrete way of measuring my progress, I learn two complementary subjects and I also get to connect 
 							with brilliant, like-minded people. 
 						</p>
-						
-						<ul class="actions small">
-							<li><a href="#two" class="button small">Projects</a></li>
-							<li><a href="#three" class="button small">Languages & Technologies</a></li>
-						</ul>
+
 					</section>
 
-				<!-- Two -->
-					<section id="two">
-						<h2>Projects</h2>
+					<section id="education">
+						<h1>Education</h1>
+						
+
+						<div class="row">
+							<div class="col-12-xsmall">
+								<div class="row">
+									<div class="col-12-xsmall">
+										<h2>London Metropolitan University</h2>
+									</div>
+									<div class="col-12-xsmall">
+										<h2>(2020 - Present)</h2>
+									</div>
+								<ul>
+									<li><strong>Course:</strong> BSc. (Hons.) Mathematics and Computer Science (including foundation)</li>
+									<li><strong>Current grade:</strong> 1st class</li>
+									<li><strong>Expected grade:</strong> 1st class</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-6 col12-xsmall">
+								<h3>Key computer science modules</h3>
+								<ul class="alt">
+									<li>Data Structures and Specialist programming</li>
+									<li>Fundamentals of Computing</li>
+									<li>Databases</li>
+									<li>Cyber Security fundamentals</li>
+								</ul>
+							</div>
+
+							<div class="col-6 col12-xsmall">
+								<h3>Key mathematics modules</h3>
+								<ul class="alt">
+									<li>Mathematical Proofs and Structure</li>
+									<li>Calculus and Linear Algebra</li>
+									<li>Further calculus</li>
+									<li>Discrete Mathematics and Group Theory</li>
+									<li>Differential Equations</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section id="projects">
+						<h1>Projects</h1>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>RETROWARE</h3>
+								<h3>RETROWARE </h3>
 								<p>A website for in browser games (JavaScript).</p>
 								<p>Uses GlassFish 4.1, Apache DB and JSF.</p>
 								<ul class="actions small">
@@ -93,7 +142,7 @@
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/fulls/07.jpg" class="image fit thumb"><img src="images/thumbs/07.jpg" alt="" /></a>
 								<h3>A* path finding</h3>
-								<p>A visual representation of the A star shortest path finding algorithm. In addition to the original algorithm this can also find 
+								<p>A visual representation of the "A star" shortest path finding algorithm. In addition to the original algorithm this can also find 
 									the shortest path given the condition that it can remove a maximum of N blocks (N appears as MAX_BLEVEL in code).
 								</p>
 								<p>Written in Python 3.x using PyGame library.</p>
@@ -105,7 +154,7 @@
 								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
 								<h3>Student manager</h3>
 								<p>An application which keeps track of basic student details and the marks of the modules they take.</p>
-								<p>The purpose of this project was to choose suitable data structures to store student data and implement them from scratch.</p>
+								<p>Implemented from scratch a Red-Black Binary Tree (Java's TreeMap), Stack and Linked List.</p>
 								<ul class="actions small">
 									<li><a href="https://github.com/Proxima-Centaurii/Student-manager" class="button primary small">View project</a></li>
 								</ul>
@@ -113,7 +162,7 @@
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
 								<h3>Bit adder</h3>
-								<p>Bit adder circuit simulation written in python (minimum python version is 3.x). </p>
+								<p>Bit adder circuit simulation written in python (minimum required python version is 3.x). </p>
 								<ul class="actions small">
 									<li><a href="https://github.com/Proxima-Centaurii/Bit-adder" class="button primary small">View project</a></li>
 								</ul>
@@ -148,8 +197,8 @@
 						</div>
 					</section>
 
-					<section id="three">
-						<h2>I possess knowledge of...</h2>
+					<section id="technical_knowledge">
+						<h1>Technical knowledge</h1>
 						<div class="row">
 							<div class="col-6 col12-xsmall">
 								<h3>Languages</h3>
@@ -158,7 +207,7 @@
 									<li>Python</li>
 									<li>C/C++</li>
 									<li>C#</li>
-									<li>HTML5</li>
+									<li>HTML</li>
 									<li>CSS</li>
 									<li>JavaScript</li>
 									<li>SQL (Oracle and Apache)</li>
@@ -166,21 +215,21 @@
 							</div>
 
 							<div class="col-6 col12-xsmall">
-								<h3>Technologies</h3>
+								<h3>Skills</h3>
 								<ul class="alt">
-									<li>Java Server Faces (JSF)</li>
-									<li>SpringBoot</li>
-									<li>NodeJS & NPM</li>
-									<li>Git</li>
-									<li>Linux shell scripting</li>
-									<li>PyGame</li>
+									<li>Debugging and testing code</li>
+									<li>Data parsing</li>
+									<li>Source control management (Git)</li>
+									<li>Web development</li>
+									<li>Shell (Linux)</li>
+									<li>Writing documentation (MS Office and Mark down)</li>
 								</ul>
 							</div>
 						</div>
 					</section>
-
+					
 			</div>
-
+			
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
