@@ -98,13 +98,82 @@
 		// Lightbox gallery.
 			$window.on('load', function() {
 
-				$('#projects').poptrox({
-					caption: function($a) { return $a.next('h3').text(); },
+				// $('#projects').poptrox({
+				// 	caption: function($a) { return $a.siblings('h3').text(); },
+				// 	overlayColor: '#2c2c2c',
+				// 	overlayOpacity: 0.85,
+				// 	popupCloserText: '',
+				// 	popupLoaderText: '',
+				// 	selector: '.work-item a.image',
+				// 	usePopupCaption: true,
+				// 	usePopupDefaultStyling: false,
+				// 	usePopupEasyClose: false,
+				// 	usePopupNav: true,
+				// 	windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				// });
+
+				$('#project-retroware').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
 					overlayColor: '#2c2c2c',
 					overlayOpacity: 0.85,
 					popupCloserText: '',
 					popupLoaderText: '',
-					selector: '.work-item a.image',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: true,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
+				$('#project-map-editor').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: false,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
+
+				$('#project-smart-alarm').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: false,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
+
+				$('#project-fixed').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: false,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
+
+				$('#project-astar').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: 'a.image',
 					usePopupCaption: true,
 					usePopupDefaultStyling: false,
 					usePopupEasyClose: false,
@@ -112,6 +181,75 @@
 					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 				});
 
+				$('#project-student-manager').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: true,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
+
+				$('#project-bit-adder').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: true,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
+
+				$('#project-perlin-noise').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: false,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
+
+				$('#project-img-to-ascii').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: false,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
+
+				$('#project-chat-room').poptrox({
+					caption: function($a) { return $a.attr("alt"); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: true,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
 			});
 
 })(jQuery);
