@@ -167,7 +167,7 @@
 					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 				});
 
-				$('#project-astar').poptrox({
+				$('#project-path-finder-visualiser').poptrox({
 					caption: function($a) { return $a.attr("alt"); },
 					overlayColor: '#2c2c2c',
 					overlayOpacity: 0.85,
