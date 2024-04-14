@@ -1,0 +1,40 @@
+---
+import ProjectImageCarousel from "./ProjectImageCarousel.astro";
+
+interface Props {
+    modalId: string;
+    title: string;
+    description: string;
+    stack: string;
+    projectLink: string;
+    imageSet: Array<string>; 
+}
+
+const { modalId , title , description, stack, projectLink , imageSet} = Astro.props;
+---
+
+<dialog id={modalId} class="modal">
+    <!-- Content -->
+    <div class="modal-box bg-base-300 max-w-3xl ">
+        <!-- Insert an image or image carousel in 'display' slot -->
+        { imageSet.length != 0 && <ProjectImageCarousel imageSet={imageSet} carouselId={modalId+'_carousel'}/> }
+
+        <h3 class="font-bold">{title}</h3>
+        {stack && <p class="m-0"><span class="font-bold">Stack:</span> {stack}</p>}
+        <p class="font-bold">Description</p>
+        {description && <p class="py-0">{description}</p>}
+
+        <!-- Close button for modal -->
+        <div class="modal-action">
+            <form method="dialog">
+                <button class="btn btn-neutral not-prose">Close</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- For closing modal when clicking outside the modal -->
+    <form method="dialog" class="modal-backdrop">
+        <button>Close</button>
+    </form>
+</dialog>

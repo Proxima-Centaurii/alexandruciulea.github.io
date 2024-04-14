@@ -1,17 +1,196 @@
 ---
-// Welcome to Astro! Everything between these triple-dash code fences
-// is your "component frontmatter". It never runs in the browser.
-console.log('This runs in your terminal, not the browser!');
+import '../styles.css';
+import MainLayout from '../layouts/MainLayout.astro';
+import ProjectListLayout from '../layouts/ProjectListLayout.astro';
+import PortfolioSection from '../components/PortfolioSection.astro';
+import ProjectItem from '../components/ProjectItem.astro';
+
+const pageTitle = "My portfolio";
+
+import type { ImageMetadata } from 'astro';
+import { Image, getImage } from 'astro:assets';
+
+const thumbs = import.meta.glob<{default: ImageMetadata}>('/src/assets/images/thumbs/*.{jpeg,jpg,png}');
+
 ---
-<!-- Below is your "component template." It's just HTML, but with
-     some magic sprinkled in to help you build great templates. -->
-<html>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
-<style>
-  h1 {
-    color: orange;
-  }
-</style>
+
+<MainLayout pageTitle={pageTitle}>
+	<!-- About me -->
+	<PortfolioSection sectionId="about_me" sectionTitle="About me">
+		<p>
+			My name is Alexandru Ciulea and I am a Mathematics and Computer Science graduate with a passion for working with data, creating tools and simulators. 
+		</p>
+		<p>
+			The reason for studying Mathematics in addition to Computer Science was that these two disciplines are complementary. Subjects in Mathematics provided 
+			a way improve my problem solving and analytical skills while subjects in Computer Science provided me with a solid theoretical foundation and practical 
+			applications in web development, embedded systems, and in the study of algorithms and data structures. In addition, studying both subjects gave me the 
+			opportunity to connect with plenty of brilliant people, work with them on projects, and develop my teamwork and communication skills.
+		</p>
+		<p>
+			In my spare time I enjoy solving programming challenges. Most recently, I started taking part in Google's FooBar timed challenges, currently on-going 
+			and on the last challenge of the series (not started yet). Appart from the programming challenges, I also research a wide range of topics in 
+			Computer Science such as web technologies, frameworks, embedded systems, programming languages, design patterns and best practices. 
+			As part of the research process, I write code and start projects which allow me to solidify the knowledge aquired. In the <span class="link text-accent" onclick="navTo('projects')">projects section</span> 
+			of this page, there is a list of some of my projects that I made available on Github.
+		</p>
+	</PortfolioSection>
+
+	<!-- Education -->
+	<PortfolioSection sectionId="education" sectionTitle="Education">
+		<div class="education-section-flex">
+			<!-- Institution -->
+			<div class="basis-4/5">
+					<h2 class="mb-4">London Metropolitan University</h2>
+		
+					<p class="my-0"><span class="font-bold mr-2">Course:</span> BSc. (Hons.) Mathematics and Computer Science (including foundation)</p>
+					<p class="my-0"><span class="font-bold mr-2">Final grade:</span> First Class</p>
+				
+			</div>
+
+			<!-- Key modules -->
+			<div class="module-list-card">
+				<div class="card-body">
+					<h2 class="size-fit m-0">Key computer science modules</h2>
+					<ul class="size-fit m-0 p-0 list-none">
+						<li>Data Structures and Specialist Programming</li>
+						<li>Formal Languages and Theory of Automata</li>
+						<li>Fundamentals of Computing</li>
+						<li>Databases</li>
+						<li>Cyber Security Fundamentals</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="module-list-card">
+				<div class="card-body">
+					<h2 class="size-fit m-0">Key mathematics modules</h2>
+					<ul class="size-fit m-0 p-0 list-none">
+						<li>Mathematical Proofs and Structure</li>
+						<li>Calculus and Linear Algebra</li>
+						<li>Further Calculus</li>
+						<li>Discrete Mathematics and Group Theory</li>
+						<li>Differential Equations</li>
+						<li>Mathematical Modelling</li>
+					</ul>
+				</div>
+			</div>				
+		
+		</div>
+	</PortfolioSection>
+
+	<!-- Technical knowledge section -->
+	<PortfolioSection sectionId="technical_knowledge" sectionTitle="Technical knowledge">
+		<p class="my-0"><span class="font-bold mr-2">Languages:</span> Java, Python, C, C++, C#, HTML, CSS, Javascript, SQL</p>
+		<p class="my-0"><span class="font-bold mr-2">Frameworks:</span> JUnit, JSF, Springboot, Astro, Tailwind CSS, SCSS</p>
+		<p class="my-0"><span class="font-bold mr-2">Tools and technologies:</span> Git, Postman, Node.js, Arduino, Linux (Debian and Arch)</p>
+	</PortfolioSection>
+
+
+	<!-- Projects section -->
+	<PortfolioSection sectionId="projects" sectionTitle="Projects">
+		<!-- Projects grid -->
+		<ProjectListLayout>
+			<ProjectItem 
+				itemId="retroware"
+				title="RETROWARE" 
+				stack="Java, Spring 3, H2 (SQL), CSS, HTML, JavaScript"
+				description="RETROWARE is a web application for hosting JavaScript based browser games. Visitors may create user accounts, edit their profile, leave comments, and rate games."
+				projectLink="https://github.com/Proxima-Centaurii/Retroware-spring"
+				imageSet={["retroware_01", "retroware_02", "retroware_03", "retroware_04", "retroware_05", "retroware_06", "retroware_07"]}>				
+					<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/retroware.jpg']()} alt="RETROWARE" quality="mid" loading='eager'/>
+			</ProjectItem>
+
+			<ProjectItem 
+				itemId='pfv'
+				title="Path finder visualiser" 
+				stack="Python 3.9, PyGame"
+				projectLink='https://github.com/Proxima-Centaurii/Path-finder-visualiser'
+				imageSet={["pfv-astar", "pfv-bfs", "pfv-dfs", "pfv-greedy"]}
+				description="A visualiser tool that allows the user to define their own maze and visualise a simulation of informed and uninformed space search algorithms.">
+					<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/path_finder_visualiser.jpg']()} alt="Path finder visualiser" quality="mid" loading='eager'/>
+			</ProjectItem>
+
+			<ProjectItem 
+			itemId='salarm'
+			title="Smart alarm" 
+			stack="C, Arduino Uno, ThinkerCAD"
+			projectLink='https://www.tinkercad.com/things/jOxP3YavhmP'
+			imageSet={["smart_alarm"]}
+			description="An Arduino Uno demo. The project is multi-functional alarm with a friendly and easy to use user interface.">
+				<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/smart_alarm.jpg']()} alt="Smart alarm" quality="mid" loading='eager'/>
+			</ProjectItem>
+
+			<ProjectItem 
+				itemId='bitadder'
+				title="Bit adder" 
+				stack="Python 3"
+				projectLink='https://github.com/Proxima-Centaurii/Bit-adder'
+				imageSet={["bit_adder_01","bit_adder_02","bit_adder_03","bit_adder_04", "bit_adder_05"]}
+				description="An emulation of the adder and subtractor circuits of a CPU. The emulator works with 8-bit integers (signed or unsigned).">
+					<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/bit_adder.jpg']()} alt="Bit adder" quality="mid" loading='eager'/>
+			</ProjectItem>
+			
+			<ProjectItem 
+				itemId='mapeditor'
+				title="Map editor" 
+				stack="C#"
+				projectLink='https://github.com/Proxima-Centaurii/Map-Editor'
+				imageSet={["map_editor"]}
+				description='A map editor developed to create levels for a game prototype named "FIXED".'>
+					<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/map_editor.jpg']()} alt="Map editor" quality="mid" loading='eager'/>
+			</ProjectItem>
+
+			<ProjectItem 
+				itemId='fixed'
+				title="FIXED" 
+				stack="C++, SFML"
+				projectLink='https://gamejolt.com/games/fixed/549683'
+				imageSet={["fixed_game"]}
+				description="A game prototype for a puzzle game idea I've had. This game is currently posponed but it is still available to download and play on GameJolt.">
+					<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/fixed.jpg']()} alt="FIXED" quality="mid" loading='eager'/>
+
+			</ProjectItem>
+
+			<ProjectItem
+				itemId='student_manager'
+				title="Student manager"
+				stack="Java"
+				projectLink='https://github.com/Proxima-Centaurii/Student-manager'
+				imageSet={["student_manager_01","student_manager_02"]}
+				description="An application which keeps track of basic student details and the marks of the modules they take. The purpose of this project was to choose suitable data structures to store student data and implement them from scratch.">
+					<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/student_manager.jpg']()} alt="Student manager" quality="mid" loading='eager' />
+			</ProjectItem>
+
+			<ProjectItem
+				itemId='perlin_noise'
+				title="Perlin noise"
+				stack="Java"
+				projectLink='https://github.com/Proxima-Centaurii/Perlin-Noise'
+				imageSet={[]}
+				description="A program that generates a random terrain map (top-down view). This program is based on an algorithm developed by mathematician Ken Perlin in 1983 after working on the Sci-Fi movie 'Tron' (1982).">
+				<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/perlin_noise.jpg']()} alt="Perlin noise" quality="mid" loading='eager' />
+			</ProjectItem>
+
+			<ProjectItem
+				itemId='img_ascii'
+				title="Image to ASCII"
+				stack="Java"
+				projectLink='https://github.com/Proxima-Centaurii/ImageToASCII'
+				imageSet={["img_to_ascii_01"]}
+				description="Resizes and converts an image's pixels to text characters. To view the result after conversion, open it in any text editor and zoom out.">
+				<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/image_to_ascii.jpg']()} alt="Image2ASCII" quality="mid" loading='eager' />
+			</ProjectItem>
+
+			<ProjectItem
+				itemId='chat_room'
+				title="Chat room"
+				stack="Java"
+				projectLink='https://github.com/Proxima-Centaurii/Chat-room'
+				imageSet={["chat_room_01","chat_room_02"]}
+				description="A direct message application. Through the client application, users can connect to a server where they can chat with other users connected to the same server.">
+				<Image slot="thumbnail" class="project-thumbnail" src={thumbs['/src/assets/images/thumbs/chat_room.jpg']()} alt="Chat room" quality="mid" loading='eager' />
+			</ProjectItem>
+
+		</ProjectListLayout>
+	</PortfolioSection>
+</MainLayout>

@@ -1,0 +1,33 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props{
+    imageSet: Array<string>;
+    carouselId: string;
+}
+
+const basePath = '/src/assets/images/project_image_gallery/';
+const { imageSet, carouselId} = Astro.props;
+const images = import.meta.glob<{default: ImageMetadata}>('/src/assets/images/project_image_gallery/*.{jpeg,jpg,png}');
+
+---
+
+<div class="image-carousel">    
+    { (imageSet.length > 1 &&
+        imageSet.map((key, index) => 
+            <div id={carouselId+'_'+index} class="item group">
+                <Image class="w-full" src={images[basePath+key+'.jpg']()} alt="" width="720" height="328" quality="high" />
+                <div class="controls">
+                    <button onclick={"navTo('" + carouselId + '_' + (index == 0 ? imageSet.length - 1 : index - 1) + "')"} class="button group-hover:bg-opacity-70">❮</button>
+                    <button onclick={"navTo('" + carouselId + '_' + (index == imageSet.length - 1 ? 0 : index + 1) + "')"} class="button group-hover:bg-opacity-70">❯</button>
+                </div>
+            </div>
+        )
+        )||(imageSet.length == 1 &&
+            <div id={carouselId+'_0'} class="item">
+                <Image class="w-full" src={images[basePath+imageSet[0]+'.jpg']()} alt="" width="720" height="328" quality="high"/>
+            </div>
+        )
+    }
+</div>
