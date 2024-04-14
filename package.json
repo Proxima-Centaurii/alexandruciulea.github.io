@@ -1,25 +1,25 @@
 {
   "name": "proxima-centaurii.github.io",
-  "version": "1.0.0",
-  "description": "Portofolio website.",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "node_modules/.bin/gulp"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Proxima-Centaurii/proxima-centaurii.github.io.git"
   },
-  "author": "",
+  "author": "Alex Ciulea",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Proxima-Centaurii/proxima-centaurii.github.io/issues"
   },
   "homepage": "https://github.com/Proxima-Centaurii/proxima-centaurii.github.io#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.63.6"
+  "dependencies": {
+    "astro": "^4.6.1"
   }
 }
