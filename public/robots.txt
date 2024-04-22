@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /_astro/*
+
+Sitemap: https://proxima-centaurii.github.io/sitemaps/profiles.xml
+Sitemap: https://proxima-centaurii.github.io/sitemaps/projects.xml
