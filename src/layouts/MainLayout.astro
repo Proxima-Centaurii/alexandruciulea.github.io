@@ -2,6 +2,7 @@
 import { Image, getImage } from 'astro:assets';
 import avatar_img from '../assets/images/avatar.jpg';
 import background_img from '../assets/images/bg.jpg';
+import ArrowUp from '../assets/images/svg/arrow_up.svg?raw';
 import Footer from '../components/Footer.astro';
 
 const optimisedBackground = await getImage({src: background_img, format: 'webp', quality: 'low'});
@@ -36,7 +37,7 @@ const {pageTitle} = Astro.props;
 				</div>
 				<div class="prose py-8 w-full max-w-none">
 					<h1 class="text-primary m-2 text-sm sm:text-4xl lg:text-lg xl:text-3xl text-drop-shadow-2">Vasile-Alexandru Ciulea</h1>
-					<p class="text-info font-bold m-2 text-sm sm:text-xl lg:text-sm xl:text-xl text-drop-shadow-2">Mathematics and Computer Science graduate</p>
+					<p class="text-info font-bold m-2 text-sm sm:text-xl lg:text-sm xl:text-xl text-drop-shadow-2">Software Engineer and Web Developer</p>
 					<!-- <p class="invisible 2xl:visible font-bold text-info">2XL</p>
 					<p class="invisible xl:visible font-bold text-info">XL</p>
 					<p class="invisible lg:visible font-bold text-info">Large</p>
@@ -57,6 +58,10 @@ const {pageTitle} = Astro.props;
 			
 		</header>
 
+		<button id="toTopButton" class="z-10 btn btn-square btn-primary fixed right-4 bottom-4 size-fit opacity-60 hover:opacity-100" onclick="navTo('header')">
+			<Fragment set:html={ArrowUp}/>
+		</button>
+
         <!-- Page content sections -->
         <div class="main-content">
             <slot />
@@ -69,7 +74,7 @@ const {pageTitle} = Astro.props;
 		</div>
 
 		<script type="text/javascript" src="scroll_to_view.js"></script>
-		<script src="../assets/scripts/parallax_background.js"></script>
+		<script src="../assets/scripts/page_scrolling.js"></script>
 		
     </body>
 </html>

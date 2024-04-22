@@ -111,3 +111,8 @@
 footer svg {
     @apply fill-info hover:brightness-200 text-drop-shadow-2;
 }
+
+
+#toTopButton svg{
+    @apply fill-info size-12 hover:fill-black;
+}
