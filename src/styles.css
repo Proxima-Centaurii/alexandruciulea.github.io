@@ -116,3 +116,11 @@ footer svg {
 #toTopButton svg{
     @apply fill-info size-12 hover:fill-black;
 }
+
+p.inline-enum{
+    @apply my-0;
+}
+
+p.inline-enum span {
+    @apply font-bold mr-2;
+}

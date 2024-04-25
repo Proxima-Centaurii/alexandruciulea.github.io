@@ -13,18 +13,18 @@ interface Props {
 const { itemId, title , description, stack, projectLink , imageSet} = Astro.props;
 const modalId = itemId + '_modal';
 ---
-<div class="project-item">
+<article id={itemId} class="project-item">
     <figure class="m-0">
         <!-- Thumbnail -->
         <slot name="thumbnail" />
     </figure>
     <div class="card-body">
         <h2 class="card-title m-0">{title}</h2>
-        {stack && <p class="m-0"><span class="font-bold">Stack:</span> {stack}</p>}
+        {stack && <p class="inline-enum"><span>Stack:</span> {stack}</p>}
         <div class="card-actions">
             <button class="btn btn-neutral not-prose" onclick={modalId + '.showModal()'}>View details</button>
             <ProjectItemModal modalId={modalId} title={title} description={description} stack={stack} projectLink={projectLink}, imageSet={imageSet} />
             <a href={projectLink} class="btn btn-neutral not-prose">View project page</a>
         </div>
     </div>
-</div>
+</article>

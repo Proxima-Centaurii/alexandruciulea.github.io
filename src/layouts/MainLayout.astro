@@ -38,11 +38,6 @@ const {pageTitle} = Astro.props;
 				<div class="prose py-8 w-full max-w-none">
 					<h1 class="text-primary m-2 text-sm sm:text-4xl lg:text-lg xl:text-3xl text-drop-shadow-2">Vasile-Alexandru Ciulea</h1>
 					<p class="text-info font-bold m-2 text-sm sm:text-xl lg:text-sm xl:text-xl text-drop-shadow-2">Software Engineer and Web Developer</p>
-					<!-- <p class="invisible 2xl:visible font-bold text-info">2XL</p>
-					<p class="invisible xl:visible font-bold text-info">XL</p>
-					<p class="invisible lg:visible font-bold text-info">Large</p>
-					<p class="invisible md:visible font-bold text-info">Medium</p>
-					<p class="invisible sm:visible font-bold text-info">Small</p> -->
 				</div>
 				<div class="grid grid-flow-row gap-4">
 					<button class="btn btn-neutral btn" onclick="navTo('about_me')">About me</button>
@@ -65,8 +60,7 @@ const {pageTitle} = Astro.props;
         <!-- Page content sections -->
         <div class="main-content">
             <slot />
-
-			
+	
         </div>
 
 		<div class="w-full lg:invisible h-16 bottom-page-footer" style={`background-image: url(${optimisedBackground.src});`}>

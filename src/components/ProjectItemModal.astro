@@ -20,7 +20,7 @@ const { modalId , title , description, stack, projectLink , imageSet} = Astro.pr
         { imageSet.length != 0 && <ProjectImageCarousel imageSet={imageSet} carouselId={modalId+'_carousel'}/> }
 
         <h3 class="font-bold">{title}</h3>
-        {stack && <p class="m-0"><span class="font-bold">Stack:</span> {stack}</p>}
+        {stack && <p class="inline-enum"><span>Stack:</span> {stack}</p>}
         <p class="font-bold">Description</p>
         {description && <p class="py-0">{description}</p>}
 
